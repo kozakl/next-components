@@ -1,0 +1,11 @@
+:root {
+  --font-primary: sans-serif;
+  
+  --background-primary: #FFFFFF;
+  
+  --border-color-primary: #000000;
+  --border-color-secondary: #BFBFBF;
+  
+  --text-color-primary: #000000;
+  --text-color-error: #F44336;
+}

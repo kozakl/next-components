@@ -1,0 +1,27 @@
+@import 'variables.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background-primary);
+  color: var(--text-color-primary);
+  font-family: var(--font-primary);
+  font-weight: 300;
+  margin: 0;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+strong {
+  font-weight: 500;
+}

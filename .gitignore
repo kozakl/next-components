@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Testing
+coverage/
+
+# Mats
+mats/*
+
+# Next.js
+.next/
+out/
+
+# Others
+.idea/
+TODO.txt
