@@ -1,0 +1,83 @@
+.textField {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  margin: 1.75em 0;
+  
+  &:focus-within {
+    .placeholder {
+      font-size: 0.75em;
+      top: -1.5em;
+    }
+  }
+  &.disabled {
+    opacity: 0.5;
+  }
+}
+
+.adornmentContainer {
+  border-bottom: solid 1px;
+  padding-bottom: 0.25em;
+  
+  &.flex {
+    display: flex;
+    align-items: flex-start;
+  }
+  &.error {
+    border-bottom: solid 1px var(--text-color-error);
+  }
+}
+
+.startAdornment {
+  margin-right: 0.4em;
+}
+
+.placeholderContainer {
+  flex: 1;
+  
+  &.relative {
+    position: relative;
+  }
+}
+
+.placeholder {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+  width: 100%;
+  top: 0;
+  left: 0;
+  
+  &.opened {
+    font-size: 0.75em;
+    top: -1.5em;
+  }
+}
+
+.input {
+  display: block;
+  background: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  width: 100%;
+}
+
+.endAdornment {
+  margin-left: 0.4em;
+}
+
+.error:not(.adornmentContainer) {
+  display: none;
+  color: var(--text-color-error);
+  font-size: 0.75em;
+  margin-top: 0.4em;
+  
+  &.display {
+    display: block;
+  }
+}
