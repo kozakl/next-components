@@ -1,7 +1,6 @@
 import {ChangeEventHandler, FunctionComponent,
         KeyboardEventHandler, ReactNode} from 'react';
 import {classNames} from '@kozakl/utils';
-import React from 'react';
 import style from './TextField.module.css';
 
 export const TextField:FunctionComponent<Props> = (props)=>
