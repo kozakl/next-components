@@ -50,10 +50,11 @@ export const TextField:FunctionComponent<Props> = (props)=>
                         value={props.value}
                         placeholder={!props.openable ?
                             props.placeholder.toString() : null}
+                        disabled={props.disabled}
+                        autoComplete={props.autoComplete}
                         min={props.min}
                         max={props.max}
                         maxLength={props.maxLength}
-                        disabled={props.disabled}
                         onChange={props.onChange}
                         onKeyUp={props.onKeyUp}/>
                 </div>
@@ -82,6 +83,7 @@ interface Props {
     opened?:boolean;
     openable?:boolean;
     disabled?:boolean;
+    autoComplete?:string;
     min?:number;
     max?:number;
     maxLength?:number;
