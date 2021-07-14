@@ -1,5 +1,5 @@
-import Head from 'next/head'
 import {FunctionComponent} from 'react';
+import {default as Head} from 'next/head';
 
 const Index:FunctionComponent = ()=>
 {
