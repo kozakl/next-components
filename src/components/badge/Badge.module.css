@@ -1,0 +1,21 @@
+.badge {
+  --background: #FF4200;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--background);
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  line-height: 1.5em;
+  width: 1.5em;
+  transition: opacity 0.2s;
+}
+
+.label {
+  color: var(--text-color-primary);
+  font-size: 0.8em;
+  cursor: pointer;
+  margin: 0;
+}
