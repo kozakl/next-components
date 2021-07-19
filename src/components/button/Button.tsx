@@ -12,6 +12,7 @@ const Button:FunctionComponent<Props> = (props)=>
     return (
         <button
             className={buttonClass}
+            id={props.id}
             type={props.type}
             disabled={props.disabled}
             onClick={props.onClick}>
@@ -26,6 +27,7 @@ Button.defaultProps = {
 
 interface Props {
     className?:string;
+    id?:string;
     type?:'submit' | 'reset' | 'button';
     disabled?:boolean;
     onClick?:(event:MouseEvent<HTMLButtonElement>)=> void;
