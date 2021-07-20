@@ -1,9 +1,4 @@
 .button {
-  --background-active: var(--text-color-secondary);
-  --background-disabled: #787878;
-}
-
-.button {
   background: var(--text-color-primary);
   color: var(--text-color-secondary);
   font-family: var(--font-secondary);
@@ -17,12 +12,11 @@
   &:hover,
   &:active,
   &:focus {
-    background: var(--background-active);
+    background: var(--text-color-secondary);
     color: var(--text-color-primary);
   }
   &:disabled {
-    background: var(--background-disabled);
-    color: var(--text-color-secondary);
-    cursor: auto;
+    opacity: 0.5;
+    pointer-events: none;
   }
 }
