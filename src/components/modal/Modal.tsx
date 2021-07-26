@@ -8,7 +8,7 @@ import style from './Modal.module.css';
 
 const Modal:FunctionComponent<Props> = (props)=>
 {
-    const root = useRef<HTMLDivElement>(),
+    const modal = useRef<HTMLDivElement>(),
           container = useRef<HTMLDivElement>();
     const [visible, setVisible] = useState(false),
           [active, setActive] = useState(false),
@@ -16,7 +16,7 @@ const Modal:FunctionComponent<Props> = (props)=>
           [activeDelay, setActiveDelay] = useState(0);
     
     useEffect(()=> {
-        root.current = document.querySelector('#modal-root');
+        modal.current = document.querySelector('#modal');
         container.current = document.createElement('div');
         container.current.addEventListener('click', onClickModal);
         
@@ -37,7 +37,7 @@ const Modal:FunctionComponent<Props> = (props)=>
             clearTimeout(visibleDelay);
             clearTimeout(activeDelay);
             
-            root.current.appendChild(container.current);
+            modal.current.appendChild(container.current);
             document.body.style.overflowY = 'hidden';
             setActiveDelay(window.setTimeout(()=>
                 setActive(true), 20));
@@ -47,7 +47,7 @@ const Modal:FunctionComponent<Props> = (props)=>
             
             setVisibleDelay(window.setTimeout(()=> {
                 setVisible(false);
-                root.current.removeChild(container.current);
+                modal.current.removeChild(container.current);
                 document.body.style.overflowY = 'unset';
             }, props.outTime));
         }

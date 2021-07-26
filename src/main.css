@@ -7,7 +7,7 @@
 }
 
 body {
-  background: var(--background-secondary);
+  background: var(--background-primary);
   color: var(--text-color-primary);
   font-family: var(--font-primary);
   font-weight: 300;

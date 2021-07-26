@@ -8,7 +8,7 @@ const App:FunctionComponent<AppProps> = ({Component, pageProps}:AppProps)=> {
     return (
         <Provider store={store}>
             <Component {...pageProps}/>
-            <div id="modal-root"/>
+            <div id="modal"/>
         </Provider>
     )
 };
