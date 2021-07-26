@@ -1,0 +1,5 @@
+Options -Indexes -MultiViews
+DirectorySlash Off
+
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.html -f
+RewriteRule !\.\w{2,4}$ %{REQUEST_URI}.html [L]
