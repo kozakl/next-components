@@ -1,3 +1,3 @@
-import {Home} from '../routes/home';
+import {BadgeSample} from '../routes/badge-sample';
 
-export default Home;
+export default BadgeSample;
