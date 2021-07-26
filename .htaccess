@@ -1,5 +1,4 @@
 RewriteEngine On
 RewriteCond %{REQUEST_URI} !^/export.php
 RewriteCond %{REQUEST_URI} !^/out
-RewriteCond %{REQUEST_URI} !^/admin
 RewriteRule ^(.*)$ /out/$1 [L]
