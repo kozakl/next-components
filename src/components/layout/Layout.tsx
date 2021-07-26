@@ -1,7 +1,6 @@
 import {FunctionComponent} from 'react';
 import {default as Head} from 'next/head';
 import {Toasts} from '../toasts';
-import {Toast} from '../../types';
 import style from './Layout.module.css';
 
 export const Layout:FunctionComponent<Props> = (props)=>
@@ -21,7 +20,7 @@ export const Layout:FunctionComponent<Props> = (props)=>
                 <div className={style.pages}>
                     {props.children}
                 </div>
-                <Toasts toasts={props.toasts}/>
+                <Toasts/>
             </main>
         </div>
     );
@@ -29,7 +28,6 @@ export const Layout:FunctionComponent<Props> = (props)=>
 
 interface Props {
     title?:string;
-    toasts:Toast[];
 }
 
 export default Layout;
