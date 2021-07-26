@@ -1,5 +1,6 @@
 const {join} = require('path');
 const withTM = require('next-transpile-modules')([
+    '@kozakl/hooks',
     '@kozakl/utils'
 ]);
 
