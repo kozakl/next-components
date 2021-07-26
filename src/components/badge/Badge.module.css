@@ -16,6 +16,5 @@
 .label {
   color: var(--text-color-primary);
   font-size: 0.8em;
-  cursor: pointer;
   margin: 0;
 }
