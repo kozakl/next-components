@@ -1,8 +1,9 @@
 module.exports = {
     plugins: {
-        'postcss-preset-env': {},
         'postcss-nested': {},
-        'postcss-color-mod-function': {},
+        'postcss-color-mod-function': {
+            importFrom: './src/variables.css'
+        },
         'postcss-viewport-height-correction': {}
     }
 };
