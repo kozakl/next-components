@@ -1,0 +1,10 @@
+.toasts {
+  position: fixed;
+  z-index: 2;
+  bottom: 2em;
+  right: 2em;
+}
+
+.toast {
+  margin: 0.5em 0;
+}
