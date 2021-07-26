@@ -24,6 +24,12 @@ interface Props {
     toasts:Toast[];
 }
 
+function mapStateToProps(state:StoreState) {
+    return {
+        toasts: state.toasts
+    };
+}
+
 function mapDispatchToProps(
     dispatch:ThunkDispatch<StoreState, void,
         DeleteToast>) {
@@ -33,4 +39,4 @@ function mapDispatchToProps(
     };
 }
 
-export default connect(null, mapDispatchToProps)(Toasts);
+export default connect(mapStateToProps, mapDispatchToProps)(Toasts);
