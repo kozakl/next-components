@@ -1,13 +1,15 @@
 import {FunctionComponent} from 'react';
-import {AppProps} from 'next/app'
+import {Provider} from 'react-redux';
+import {AppProps} from 'next/app';
+import {store} from '../reducers';
 import '../main.css';
 
 const App:FunctionComponent<AppProps> = ({Component, pageProps}:AppProps)=> {
     return (
-        <>
+        <Provider store={store}>
             <Component {...pageProps}/>
             <div id="modal-root"/>
-        </>
+        </Provider>
     )
 };
 
