@@ -9,11 +9,8 @@
   padding: 0.15em 0.75em;
   line-height: 1.5;
   
-  &:hover,
-  &:active,
-  &:focus {
-    background: var(--text-color-secondary);
-    color: var(--text-color-primary);
+  &:hover {
+    opacity: 0.75;
   }
   &:disabled {
     opacity: 0.5;
