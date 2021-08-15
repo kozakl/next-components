@@ -1,5 +1,5 @@
 .modal {
-  --bg-color: color-mod(#000 a(0.25));
+  --background: rgba(0, 0, 0, 0.25);
 }
 
 .modal {
@@ -13,7 +13,7 @@
   transition: background 0.2s ease-out;
   
   &.active:not(.interactive) {
-    background: var(--bg-color);
+    background: var(--background);
   }
   &.interactive {
     pointer-events: none;
