@@ -5,7 +5,6 @@ import {ThunkDispatch} from 'redux-thunk';
 import {classNames} from '@kozakl/utils';
 import {deleteToast, DeleteToast} from '../../../actions';
 import {StoreState, Toast} from '../../../types';
-import React from 'react';
 import style from './ToastItem.module.css';
 
 const ToastItem:FunctionComponent<Props> = (props)=>

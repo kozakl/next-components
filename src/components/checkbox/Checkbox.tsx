@@ -1,7 +1,6 @@
 import {ChangeEventHandler,
         FunctionComponent} from 'react';
 import {classNames} from '@kozakl/utils';
-import React from 'react';
 import style from './Checkbox.module.css';
 
 const Checkbox:FunctionComponent<Props> = (props)=>

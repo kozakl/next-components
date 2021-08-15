@@ -2,7 +2,6 @@ import {Children, FunctionComponent,
         ReactElement, useEffect,
         useRef, useState} from 'react';
 import {classNames} from '@kozakl/utils';
-import React from 'react';
 import ReactDOM from 'react-dom';
 import style from './Modal.module.css';
 

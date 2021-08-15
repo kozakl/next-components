@@ -1,7 +1,6 @@
 import {CSSProperties, FunctionComponent,
         memo, MouseEvent, useEffect,
         useRef, useState} from 'react';
-import React from 'react';
 import style from './Image.module.css';
 
 const Image:FunctionComponent<Props> = memo((props)=>

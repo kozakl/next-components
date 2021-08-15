@@ -1,6 +1,5 @@
 import {FunctionComponent} from 'react';
 import {classNames} from '@kozakl/utils';
-import React from 'react';
 import style from './Badge.module.css';
 
 const Badge:FunctionComponent<Props> = (props)=>
