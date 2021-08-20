@@ -20,7 +20,7 @@ const ToastItem:FunctionComponent<Props> = (props)=>
                 setShow(false);
                 setTimeout(()=>
                     props.deleteToast(props.id), 400)
-            }, 2500);
+            }, 3000);
             return ()=>
                 clearTimeout(timer);
         }
