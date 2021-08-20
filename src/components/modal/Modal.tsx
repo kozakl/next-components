@@ -1,6 +1,6 @@
-import {Children, FunctionComponent,
-        ReactElement, useEffect,
-        useRef, useState} from 'react';
+import {Children, cloneElement,
+        FunctionComponent, ReactElement,
+        useEffect, useRef, useState} from 'react';
 import {classNames} from '@kozakl/utils';
 import ReactDOM from 'react-dom';
 import style from './Modal.module.css';
@@ -37,9 +37,11 @@ const Modal:FunctionComponent<Props> = (props)=>
             clearTimeout(activeDelay);
             
             modal.current.appendChild(container.current);
-            document.body.style.overflowY = 'hidden';
             setActiveDelay(window.setTimeout(()=>
                 setActive(true), 20));
+            if (props.autoOverflow) {
+                document.body.style.overflowY = 'hidden';
+            }
         } else if (visible && !props.visible) {
             clearTimeout(visibleDelay);
             clearTimeout(activeDelay);
@@ -47,7 +49,9 @@ const Modal:FunctionComponent<Props> = (props)=>
             setVisibleDelay(window.setTimeout(()=> {
                 setVisible(false);
                 modal.current.removeChild(container.current);
-                document.body.style.overflowY = 'unset';
+                if (props.autoOverflow) {
+                    document.body.style.overflowY = 'unset';
+                }
             }, props.outTime));
         }
     }, [props.visible]);
@@ -69,19 +73,27 @@ const Modal:FunctionComponent<Props> = (props)=>
         ));
     return !!container.current && visible &&
         ReactDOM.createPortal(
-            React.cloneElement(
-                Children.only(props.children) as ReactElement, {
-                    active: +active,
-                    onClose: props.onClose,
-                    ...(props.children as ReactElement).props
-                }
-            ),
+            props.render ?
+                cloneElement(
+                    props.render({
+                        active: active,
+                        onClose: props.onClose
+                    })
+                ) :
+                cloneElement(
+                    Children.only(props.children) as ReactElement, {
+                        active: +active,
+                        onClose: props.onClose,
+                        ...(props.children as ReactElement).props
+                    }
+                ),
             container.current
         );
 };
 
 Modal.defaultProps = {
-    outTime: 0
+    outTime: 0,
+    autoOverflow: true
 };
 
 interface Props {
@@ -89,6 +101,13 @@ interface Props {
     outTime?:number;
     interactive?:boolean;
     center?:boolean;
+    autoOverflow?:boolean;
+    render?:(
+        props:{
+            active?:boolean,
+            onClose?:()=> void
+        }
+    )=> ReactElement;
     onClose?:()=> void;
 }
 
