@@ -1,5 +1,5 @@
-import {CSSProperties, FunctionComponent,
-        memo, MouseEvent, AnimationEvent,
+import {CSSProperties, FunctionComponent, memo,
+        MouseEvent, AnimationEvent, TransitionEvent,
         useEffect, useRef, useState} from 'react';
 
 const ImageLite:FunctionComponent<Props> = memo((props)=>
@@ -15,7 +15,8 @@ const ImageLite:FunctionComponent<Props> = memo((props)=>
     
     useEffect(() => {
         if (img.current.complete) {
-            onLoadThumb()
+            setTimeout(()=>
+                onLoadThumb(), 0);
         }
     }, []);
     
@@ -46,6 +47,7 @@ const ImageLite:FunctionComponent<Props> = memo((props)=>
                 loading={props.loading}
                 onClick={props.onClick}
                 onAnimationEnd={props.onAnimationEnd}
+                onTransitionEnd={props.onTransitionEnd}
                 onLoad={onLoadThumb}/>
             <noscript>
                 <img
@@ -75,6 +77,7 @@ interface Props {
     cleanBetween?:boolean;
     onClick?:(event:MouseEvent<HTMLDivElement>)=> void;
     onAnimationEnd?:(event:AnimationEvent<HTMLImageElement>)=> void;
+    onTransitionEnd?:(event:TransitionEvent<HTMLImageElement>)=> void;
     onLoadThumb?:()=> void;
 }
 
