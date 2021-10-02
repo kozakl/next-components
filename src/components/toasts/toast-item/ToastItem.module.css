@@ -2,11 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--background-secondary);
-  color: var(--text-color-secondary);
-  font-size: 0.85em;
-  box-shadow: var(--shadow-primary);
-  border-radius: 0.25em;
+  background: var(--background-primary);
+  font-family: var(--font-secondary);
+  font-size: 0.95em;
+  border: 1px solid var(--text-color-primary);
+  border-radius: 0.5em;
   padding: 1em;
   transform: translateX(150%);
   transition: transform ease-in 0.4s;

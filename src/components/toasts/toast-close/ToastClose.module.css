@@ -1,39 +1,38 @@
 .toastClose {
   position: relative;
   cursor: pointer;
-  border: 1px solid var(--text-color-secondary);
+  border: 1px solid var(--text-color-primary);
   border-radius: 100%;
   width: 2.25em;
   height: 2.25em;
   
-  &:hover {
-    background: var(--background-primary);
-    border: 1px solid var(--text-color-primary);
-    
-    &:before,
-    &:after {
-      background: var(--text-color-primary);
-    }
+  &:before {
+    content: '';
+    position: absolute;
+    background: var(--text-color-primary);
+    border-radius: 0.5em;
+    width: 0.25em;
+    height: 1.5em;
+    top: 50%;
+    left: 50%;
+    transform:
+            translate(-50%, -50%)
+            rotate(45deg);
   }
-}
-
-.toastClose:before,
-.toastClose:after {
-  content: '';
-  position: absolute;
-  background: var(--text-color-secondary);
-  border-radius: 0.5em;
-  width: 0.25em;
-  height: 1.5em;
-  top: 50%;
-  left: 50%;
-  transform:
-          translate(-50%, -50%)
-          rotate(45deg);
-}
-
-.toastClose:after {
-  transform:
-          translate(-50%, -50%)
-          rotate(-45deg);
+  &:after {
+    content: '';
+    position: absolute;
+    background: var(--text-color-primary);
+    border-radius: 0.5em;
+    width: 0.25em;
+    height: 1.5em;
+    top: 50%;
+    left: 50%;
+    transform:
+            translate(-50%, -50%)
+            rotate(-45deg);
+  }
+  &:hover {
+    opacity: 0.75;
+  }
 }

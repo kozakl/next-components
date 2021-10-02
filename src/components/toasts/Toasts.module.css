@@ -5,6 +5,8 @@
   right: 2em;
 }
 
-.toast {
-  margin: 0.5em 0;
+.toasts {
+  .toast {
+    margin: 0.5em 0;
+  }
 }
