@@ -10,8 +10,10 @@ const NavLink:FunctionComponent<Props> = (props)=>
     const navLinkClass = classNames(
         props.className,
         props.active && props.activeClass ||
-            asPath.startsWith(props.href) &&
-                props.activeClass
+            (props.startWith ?
+                asPath.startsWith(props.href) :
+                asPath == props.href) &&
+                    props.activeClass
     );
     return (
         <Link href={props.href}>
@@ -29,6 +31,7 @@ interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
     className?:string;
     activeClass?:string;
     active?:boolean;
+    startWith?:boolean;
 }
 
 export default NavLink;
