@@ -23,6 +23,12 @@ const Modal:FunctionComponent<Props> = (props)=>
             clearTimeout(visibleDelay);
             clearTimeout(activeDelay);
             container.current.removeEventListener('click', onClickModal);
+            if (container.current.parentElement) {
+                modal.current.removeChild(container.current);
+                if (props.autoOverflow) {
+                    document.body.style.overflowY = 'unset';
+                }
+            }
         }
     }, []);
     
@@ -47,10 +53,12 @@ const Modal:FunctionComponent<Props> = (props)=>
             clearTimeout(activeDelay);
             
             setVisibleDelay(window.setTimeout(()=> {
-                setVisible(false);
-                modal.current.removeChild(container.current);
-                if (props.autoOverflow) {
-                    document.body.style.overflowY = 'unset';
+                if (container.current.parentElement) {
+                    modal.current.removeChild(container.current);
+                    setVisible(false);
+                    if (props.autoOverflow) {
+                        document.body.style.overflowY = 'unset';
+                    }
                 }
             }, props.outTime));
         }
@@ -68,6 +76,7 @@ const Modal:FunctionComponent<Props> = (props)=>
         (container.current.className = classNames(
             style.modal,
             active && style.active,
+            props.transparent && style.transparent,
             props.interactive && style.interactive,
             props.center && style.center
         ));
@@ -99,6 +108,7 @@ Modal.defaultProps = {
 interface Props {
     visible:boolean;
     outTime?:number;
+    transparent?:boolean;
     interactive?:boolean;
     center?:boolean;
     autoOverflow?:boolean;

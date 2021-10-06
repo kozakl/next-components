@@ -12,7 +12,7 @@
   top: 0;
   transition: background 0.2s ease-out;
   
-  &.active:not(.interactive) {
+  &.active:not(.transparent):not(.interactive) {
     background: var(--background);
   }
   &.interactive {
