@@ -13,8 +13,10 @@
   transition: opacity 0.2s;
 }
 
-.label {
-  color: var(--text-color-primary);
-  font-size: 0.8em;
-  margin: 0;
+.badge {
+  .label {
+    color: var(--text-color-primary);
+    font-size: 0.8em;
+    margin: 0;
+  }
 }
