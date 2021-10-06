@@ -1,0 +1,28 @@
+.toggle {
+  cursor: pointer;
+  
+  &.cross {
+    & >.line1 {
+      transform: rotate(45deg);
+    }
+    & >.line3 {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.toggle {
+  .line1,
+  .line3 {
+    fill: var(--text-color-primary);
+    transition:
+            transform 0.3s ease-in-out,
+            opacity 0.2s ease-in-out;
+  }
+  .line1 {
+    transform-origin: 1.9em 2.5em;
+  }
+  .line3 {
+    transform-origin: 1.4em 4em;
+  }
+}

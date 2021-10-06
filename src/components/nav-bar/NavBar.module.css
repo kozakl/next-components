@@ -1,0 +1,106 @@
+.navBar {
+  pointer-events: none;
+}
+
+.navBar {
+  .container {
+    pointer-events: none;
+    
+    & * {
+      pointer-events: initial;
+    }
+  }
+  .line {
+    border-top: 1px solid var(--text-color-primary);
+  }
+  .links {
+    background: var(--background-primary);
+    padding: 0 2em;
+    height: calc(100vh - 78px);
+    
+    &.close {
+      transform: translateY(100%);
+    }
+    &.transit {
+      transition: transform 0.4s ease-in-out;
+    }
+  }
+  .link {
+    display: block;
+    color: var(--text-color-primary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--text-color-primary);
+    padding: 2em 0;
+  }
+  .bottom {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--background-primary);
+    padding: 1em 2em;
+  }
+  .toggle {
+    padding: 0.5em;
+    margin-left: -1em;
+    min-width: 2.875em;
+    width: 2.875em;
+  }
+  .name {
+    display: inline-block;
+    overflow: hidden;
+    color: var(--text-color-primary);
+    text-decoration: none;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    margin-right: 1em;
+    max-width: 10em;
+  }
+  .logout {
+    background: transparent;
+    opacity: 0.75;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    top: 2em;
+    left: 2em;
+    transition: opacity 0.15s;
+    
+    & > img {
+      vertical-align: middle;
+      width: 1.5em;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    &.navBar {
+      font-family: var(--font-secondary);
+    }
+    .links {
+      background: unset;
+      padding: unset;
+      height: unset;
+    }
+    .link {
+      display: inline-block;
+      font-size: 0.75em;
+      border-bottom: 1px solid transparent;
+      padding: 0.75em 0.25em 0.25em;
+      margin: 0 0.5em 0.5em;
+      
+      &.active,
+      &:hover {
+        border-bottom: 1px solid var(--text-color-primary);
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    .link {
+      font-size: 1em;
+    }
+  }
+}
