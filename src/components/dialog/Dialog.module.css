@@ -1,0 +1,28 @@
+.dialog {
+  background: var(--background-primary);
+  font-family: var(--font-secondary);
+  box-shadow: var(--shadow-secondary);
+  border-radius: 0.125em;
+  padding: 1.5em;
+  margin: 5em auto 0;
+  max-width: 30em;
+  width: 90vw;
+}
+
+.dialog {
+  .title {
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+  .message {
+    margin-bottom: 1.5em;
+    min-height: 3em;
+  }
+  .actions {
+    text-align: right;
+    
+    & :first-child {
+      margin-right: 0.5em;
+    }
+  }
+}
