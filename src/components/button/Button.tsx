@@ -6,6 +6,8 @@ const Button:FunctionComponent<Props> = (props)=>
 {
     const buttonClass = classNames(
         style.button,
+        props.size === 'small' &&
+            style.small,
         props.className
     );
     return (
@@ -28,6 +30,7 @@ interface Props {
     className?:string;
     id?:string;
     type?:'submit' | 'reset' | 'button';
+    size?:'normal' | 'small';
     disabled?:boolean;
     onClick?:(event:MouseEvent<HTMLButtonElement>)=> void;
 }

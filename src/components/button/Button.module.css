@@ -1,16 +1,18 @@
 .button {
-  background: var(--text-color-primary);
-  color: var(--text-color-secondary);
-  font-family: var(--font-secondary);
-  font-size: 1.25em;
+  background: none;
+  color: var(--text-color-primary);
+  font-family: var(--font-primary);
+  font-size: 1em;
   cursor: pointer;
-  border: 1px solid var(--text-color-secondary);
-  border-radius: 1em;
-  padding: 0.15em 0.75em;
-  line-height: 1.5;
+  border: 1px solid var(--text-color-primary);
+  border-radius: 5em;
+  padding: 1em 1.75em;
   
   &:hover {
     opacity: 0.75;
+  }
+  &.small {
+    padding: 0.5em 1em;
   }
   &:disabled {
     opacity: 0.5;
