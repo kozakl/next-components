@@ -19,9 +19,10 @@ const Checkbox:FunctionComponent<Props> = (props)=>
                 <input
                     className={style.input}
                     id={props.id}
+                    name={props.name}
                     type="checkbox"
-                    checked={props.checked}
                     disabled={props.disabled}
+                    checked={props.checked}
                     onChange={props.onChange}/>
                 <span className={style.box}/>
                 <span>{props.children}</span>
@@ -37,8 +38,9 @@ const Checkbox:FunctionComponent<Props> = (props)=>
 interface Props {
     className?:string;
     id?:string;
-    checked?:boolean;
+    name?:string;
     disabled?:boolean;
+    checked?:boolean;
     error?:string;
     onChange?:ChangeEventHandler<HTMLInputElement>;
 }
