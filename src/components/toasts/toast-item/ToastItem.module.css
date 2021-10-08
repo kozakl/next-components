@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   background: var(--background-primary);
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   font-size: 0.875em;
   border: 1px solid var(--text-color-primary);
   border-radius: 0.5em;
