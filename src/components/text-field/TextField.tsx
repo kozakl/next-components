@@ -1,9 +1,10 @@
 import {ChangeEventHandler, FunctionComponent,
-        KeyboardEventHandler, ReactNode} from 'react';
+        KeyboardEventHandler, MouseEventHandler,
+        ReactNode} from 'react';
 import {classNames} from '@kozakl/utils';
 import style from './TextField.module.css';
 
-export const TextField:FunctionComponent<Props> = (props)=>
+const TextField:FunctionComponent<Props> = (props)=>
 {
     const textFieldClass = classNames(
         style.textField,
