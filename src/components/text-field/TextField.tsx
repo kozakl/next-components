@@ -3,7 +3,7 @@ import {ChangeEventHandler, FunctionComponent,
 import {classNames} from '@kozakl/utils';
 import style from './TextField.module.css';
 
-const TextField:FunctionComponent<Props> = (props)=>
+export const TextField:FunctionComponent<Props> = (props)=>
 {
     const textFieldClass = classNames(
         style.textField,
@@ -37,7 +37,9 @@ const TextField:FunctionComponent<Props> = (props)=>
                     <div className={style.startAdornment}>
                         {props.startAdornment}
                     </div>}
-                <div className={placeholderContainerClass}>
+                <div
+                    className={placeholderContainerClass}
+                    onClick={props.onClick}>
                     {props.openable &&
                      props.placeholder &&
                         <label className={placeholderClass}>
@@ -91,6 +93,7 @@ interface Props {
     endAdornment?:ReactNode;
     error?:string;
     onChange?:ChangeEventHandler<HTMLInputElement>;
+    onClick?:MouseEventHandler<HTMLDivElement>;
     onKeyUp?:KeyboardEventHandler<HTMLInputElement>;
 }
 
