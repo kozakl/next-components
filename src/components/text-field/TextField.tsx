@@ -51,6 +51,7 @@ const TextField:FunctionComponent<Props> = (props)=>
                         id={props.id}
                         type={props.type}
                         value={props.value}
+                        defaultValue={props.defaultValue}
                         placeholder={!props.openable ?
                             props.placeholder.toString() : null}
                         disabled={props.disabled}
@@ -82,6 +83,7 @@ interface Props {
     id?:string;
     type?:string;
     value?:string;
+    defaultValue?:string;
     placeholder?:ReactNode|string;
     opened?:boolean;
     openable?:boolean;
