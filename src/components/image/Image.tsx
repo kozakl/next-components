@@ -18,7 +18,8 @@ const Image:FunctionComponent<Props> = memo((props)=>
     
     useEffect(() => {
         if (img.current.complete) {
-            onLoadThumb()
+            setTimeout(()=>
+                onLoadThumb(), 75);
         }
     }, []);
     
