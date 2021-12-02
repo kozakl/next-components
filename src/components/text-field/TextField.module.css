@@ -69,7 +69,7 @@
   .error:not(.adornmentContainer) {
     display: none;
     color: var(--text-color-error);
-    font-size: 0.75em;
+    font-size: 0.875rem;
     margin-top: 0.4em;
     
     &.display {
