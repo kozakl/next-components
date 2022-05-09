@@ -13,3 +13,4 @@ out/
 
 # Others
 .idea/
+.DS_Store
